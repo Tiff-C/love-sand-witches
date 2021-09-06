@@ -89,12 +89,13 @@ def get_last_5_entries_sales():
     as a list of lists.
     """
     sales = SHEET.worksheet('sales')
-    
+
     columns = []
     for ind in range(1, 7):
         column = sales.col_values(ind)
         columns.append(column[-5:])
-    pprint(columns)
+
+    return columns
 
 
 def main():
@@ -110,4 +111,4 @@ def main():
 
 print('Welcome to Love Sand Witches Data Automation!\n')
 # main()
-get_last_5_entries_sales()
+sales_columns = get_last_5_entries_sales()
